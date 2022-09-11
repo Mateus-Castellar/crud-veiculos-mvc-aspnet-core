@@ -6,6 +6,7 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<AppVeiculosContext>();
+builder.Services.AddAutoMapper(typeof(Program));
 
 builder.Services.AddDbContext<AppVeiculosContext>(builder =>
     builder.UseSqlServer(connectionString));
