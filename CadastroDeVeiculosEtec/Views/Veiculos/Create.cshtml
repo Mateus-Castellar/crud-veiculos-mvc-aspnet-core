@@ -1,15 +1,13 @@
 ﻿@model CadastroDeVeiculosEtec.ViewModels.VeiculoViewModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Adicionar novo veículo";
 }
 
-<h1>Create</h1>
-
-<h4>VeiculoViewModel</h4>
+<h3>Cadastro de Veículo</h3>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-5">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -95,7 +93,7 @@
                 <label asp-for="Observacao" class="control-label"></label>
                 <input asp-for="Observacao" class="form-control" />
                 <span asp-validation-for="Observacao" class="text-danger"></span>
-            </div>
+            </div><br />
             <div class="form-group">
                 <input type="submit" value="Cadastrar" class="btn btn-success" />
                 <a class="btn btn-danger" asp-action="Index">Voltar</a>

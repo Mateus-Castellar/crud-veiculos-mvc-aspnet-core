@@ -1,13 +1,11 @@
 ﻿@model CadastroDeVeiculosEtec.ViewModels.VeiculoViewModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes " + Model.Modelo;
 }
 
-<h1>Details</h1>
-
 <div>
-    <h4>VeiculoViewModel</h4>
+    <h3>@ViewData["Title"] </h3>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -109,6 +107,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model?.Id">Editar</a>
+    <a class="btn btn-danger" asp-action="Index">Voltar a lista</a>
 </div>
