@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CadastroDeVeiculosEtec.Data;
+using CadastroDeVeiculosEtec.Models;
 using CadastroDeVeiculosEtec.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -17,7 +18,7 @@ namespace CadastroDeVeiculosEtec.Controllers
             _mapper = mapper;
         }
 
-        // GET: Veiculos
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
             var veiculos = _mapper
@@ -26,7 +27,7 @@ namespace CadastroDeVeiculosEtec.Controllers
             return View(veiculos);
         }
 
-        // GET: Veiculos/Details/5
+        [HttpGet]
         public async Task<IActionResult> Details(Guid? id)
         {
             if (id == null || _context.Veiculos == null)
@@ -44,27 +45,25 @@ namespace CadastroDeVeiculosEtec.Controllers
             return View(veiculoViewModel);
         }
 
-        // GET: Veiculos/Create
+        [HttpGet]
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Veiculos/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Marca,Modelo,Fabricante,Tipo,Ano,Combustivel,Cor,Chassi,Kilometragem,Revisão,Sinistro,RouboFurto,Aluguel,Venda,Particular,Observacao")] VeiculoViewModel veiculoViewModel)
         {
-            if (ModelState.IsValid)
-            {
-                veiculoViewModel.Id = Guid.NewGuid();
-                _context.Add(veiculoViewModel);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(veiculoViewModel);
+            if (ModelState.IsValid is false)
+                return View(veiculoViewModel);
+
+            var veiculo = _mapper.Map<Veiculo>(veiculoViewModel);
+
+            _context.Veiculos.Add(veiculo);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: Veiculos/Edit/5
