@@ -66,19 +66,15 @@ namespace CadastroDeVeiculosEtec.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // GET: Veiculos/Edit/5
-        public async Task<IActionResult> Edit(Guid? id)
+        [HttpGet]
+        public async Task<IActionResult> Edit(Guid id)
         {
-            if (id == null || _context.Veiculos == null)
-            {
-                return NotFound();
-            }
+            var veiculo = await _context.Veiculos.FindAsync(id);
 
-            var veiculoViewModel = await _context.Veiculos.FindAsync(id);
-            if (veiculoViewModel == null)
-            {
-                return NotFound();
-            }
+            if (veiculo is null) return NotFound();
+
+            var veiculoViewModel = _mapper.Map<VeiculoViewModel>(veiculo);
+
             return View(veiculoViewModel);
         }
 

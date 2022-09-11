@@ -1,4 +1,5 @@
 ﻿using CadastroDeVeiculosEtec.Models;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace CadastroDeVeiculosEtec.ViewModels
@@ -37,6 +38,7 @@ namespace CadastroDeVeiculosEtec.ViewModels
         [StringLength(50, MinimumLength = 3, ErrorMessage = "O campo deve conter entre {2} e {1} caracteres")]
         public string Chassi { get; set; } = default!;
 
+        [DisplayName("KM")]
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public double Kilometragem { get; set; }
 
@@ -44,6 +46,7 @@ namespace CadastroDeVeiculosEtec.ViewModels
 
         public bool Sinistro { get; set; }
 
+        [DisplayName("Seguro")]
         public bool RouboFurto { get; set; }
 
         public bool Aluguel { get; set; }
