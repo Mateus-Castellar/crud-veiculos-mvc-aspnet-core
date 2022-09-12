@@ -1,30 +1,15 @@
-using CadastroDeVeiculosEtec.Data;
-using Microsoft.EntityFrameworkCore;
+using CadastroDeVeiculosEtec.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
-builder.Services.AddControllersWithViews();
-builder.Services.AddScoped<AppVeiculosContext>();
-builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddMvcConfiguration();
 
-builder.Services.AddDbContext<AppVeiculosContext>(builder =>
-    builder.UseSqlServer(connectionString));
+builder.Services.RegisterDependences();
+
+builder.Services.AddDatabaseConfiguarations(builder.Configuration);
 
 var app = builder.Build();
 
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Home/Error");
-    app.UseHsts();
-}
-
-app.UseHttpsRedirection();
-app.UseStaticFiles();
-app.UseRouting();
-app.UseAuthorization();
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Veiculos}/{action=Index}/{id?}");
+app.UseMvcConfiguration();
 
 app.Run();
