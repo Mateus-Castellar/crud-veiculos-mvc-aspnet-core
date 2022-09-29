@@ -1,6 +1,6 @@
 # CadastroDeVeiculosEtec
 
-Exercício da aula de Qualidade e Teste de Software. A atividade é desenvolver uma aplicação para cadastro de veiculos.
+Trabalho da matéria de Qualidade e Teste de Software. A atividade o desafio uma aplicação para cadastro de veiculos.
 
 ### O que foi desenvolvido:
 
