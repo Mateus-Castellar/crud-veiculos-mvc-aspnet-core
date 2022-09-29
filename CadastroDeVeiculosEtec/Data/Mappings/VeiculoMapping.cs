@@ -32,11 +32,10 @@ namespace CadastroDeVeiculosEtec.Data.Mappings
 
             builder.Property(lbda => lbda.Chassi)
                 .IsRequired()
-                .HasColumnType("varchar(50)");
+                .HasColumnType("char(17)");
 
             builder.Property(lbda => lbda.Observacao)
                 .HasColumnType("varchar(150)");
-
 
             builder.ToTable("Veiculos");
         }

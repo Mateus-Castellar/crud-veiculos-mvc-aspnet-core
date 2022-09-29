@@ -29,7 +29,7 @@ namespace CadastroDeVeiculosEtec.ViewModels
         public TipoVeiculo Tipo { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
-        [StringLength(4, MinimumLength = 4, ErrorMessage = "O campo deve conter {1} caracteres")]
+        [Range(1900, 2025, ErrorMessage = "O campo {0} deve estar entre o intervalo de {1} e {2}")]
         public int Ano { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
@@ -40,7 +40,7 @@ namespace CadastroDeVeiculosEtec.ViewModels
         public string Cor { get; set; } = default!;
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
-        [StringLength(50, MinimumLength = 3, ErrorMessage = "O campo deve conter entre {2} e {1} caracteres")]
+        [StringLength(17, MinimumLength = 17, ErrorMessage = "O campo deve conter {1} caracteres")]
         public string Chassi { get; set; } = default!;
 
         [DisplayName("KM")]
