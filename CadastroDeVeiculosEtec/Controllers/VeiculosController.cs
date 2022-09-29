@@ -66,14 +66,12 @@ namespace CadastroDeVeiculosEtec.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Marca,Modelo,Fabricante,Tipo,Ano,Combustivel,Cor,Chassi,Kilometragem,Revisão,Sinistro,RouboFurto,Aluguel,Venda,Particular,Observacao")] VeiculoViewModel veiculoViewModel)
+        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Codigo,Marca,Modelo,Fabricante,Tipo,Ano,Combustivel,Cor,Chassi,Kilometragem,Revisão,Sinistro,RouboFurto,Aluguel,Venda,Particular,Observacao")] VeiculoViewModel veiculoViewModel)
         {
             if (id != veiculoViewModel.Id)
                 return NotFound();
 
             ValidarData(veiculoViewModel.Ano);
-
-            ValidarCodigo(veiculoViewModel.Codigo);
 
             if (ModelState.IsValid is false)
                 return View(veiculoViewModel);

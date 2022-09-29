@@ -9,6 +9,7 @@
 <p>
     <a class="btn btn-success" asp-action="Create">Adicionar Novo Veículo</a>
 </p>
+
 <table class="table table-hover">
     <thead class="table-dark">
         <tr class="text-center">
@@ -115,9 +116,9 @@
                 @Html.DisplayFor(modelItem => item.Observacao)
             </td>*@
             <td>
-                <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Editar</a> 
-                    <a class="btn btn-warning"  asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
-                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+                <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id"><span class="fa fa-pencil"></span></a> 
+                <a class="btn btn-warning" asp-action="Details" asp-route-id="@item.Id"><span class="fa fa-search"></span></a>
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id"><span class="fa fa-trash"></span></a>
             </td>
         </tr>
 }
