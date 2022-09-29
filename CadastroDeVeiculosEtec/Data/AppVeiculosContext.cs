@@ -11,7 +11,7 @@ namespace CadastroDeVeiculosEtec.Data
             ChangeTracker.AutoDetectChangesEnabled = false;
         }
 
-        public DbSet<Veiculo>? Veiculos { get; set; }
+        public DbSet<Veiculo> Veiculos { get; set; } = default!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

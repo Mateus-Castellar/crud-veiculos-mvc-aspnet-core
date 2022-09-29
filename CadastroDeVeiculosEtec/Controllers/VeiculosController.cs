@@ -39,6 +39,8 @@ namespace CadastroDeVeiculosEtec.Controllers
         {
             ValidarData(veiculoViewModel.Ano);
 
+            ValidarCodigo(veiculoViewModel.Codigo);
+
             if (ModelState.IsValid is false)
                 return View(veiculoViewModel);
 
@@ -70,6 +72,8 @@ namespace CadastroDeVeiculosEtec.Controllers
                 return NotFound();
 
             ValidarData(veiculoViewModel.Ano);
+
+            ValidarCodigo(veiculoViewModel.Codigo);
 
             if (ModelState.IsValid is false)
                 return View(veiculoViewModel);
@@ -126,6 +130,16 @@ namespace CadastroDeVeiculosEtec.Controllers
 
             if (anoInformado < 1900 || anoInformado > anoAtual)
                 ModelState.AddModelError("", $"Selecione uma data válida entre 1900 e {anoAtual}");
+        }
+
+        private async void ValidarCodigo(string codigo)
+        {
+            var veiculoExiste = await _context.Veiculos
+                .Where(lbda => lbda.Codigo == codigo)
+                .FirstOrDefaultAsync();
+
+            if (veiculoExiste is not null)
+                ModelState.AddModelError("", "Já existe um veiculo cadastrado com este código");
         }
     }
 }
