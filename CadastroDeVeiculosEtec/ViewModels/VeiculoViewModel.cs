@@ -10,18 +10,22 @@ namespace CadastroDeVeiculosEtec.ViewModels
         public Guid Id { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
+        [RegularExpression("^([a-zA-Z0-9 .&'-]+)$", ErrorMessage = "O campo contém caracteres especiais")]
         [StringLength(15, MinimumLength = 15, ErrorMessage = "O campo deve conter {1} caracteres")]
         public string Codigo { get; set; } = default!;
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
+        [RegularExpression("^([a-zA-Z0-9 .&'-]+)$", ErrorMessage = "O campo contém caracteres especiais")]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "O campo deve conter entre {2} e {1} caracteres")]
         public string Marca { get; set; } = default!;
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
+        [RegularExpression("^([a-zA-Z0-9 .&'-]+)$", ErrorMessage = "O campo contém caracteres especiais")]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "O campo deve conter entre {2} e {1} caracteres")]
         public string Modelo { get; set; } = default!;
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
+        [RegularExpression("^([a-zA-Z0-9 .&'-]+)$", ErrorMessage = "O campo contém caracteres especiais")]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "O campo deve conter entre {2} e {1} caracteres")]
         public string Fabricante { get; set; } = default!;
 
@@ -30,6 +34,7 @@ namespace CadastroDeVeiculosEtec.ViewModels
 
         [MinLength(4, ErrorMessage = "O campo {0} precisa conter {1} caracteres")]
         [MaxLength(4, ErrorMessage = "O campo {0} precisa conter {1} caracteres")]
+        [RegularExpression("^([a-zA-Z0-9 .&'-]+)$", ErrorMessage = "O campo contém caracteres especiais")]
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public string Ano { get; set; } = default!;
 
@@ -37,14 +42,17 @@ namespace CadastroDeVeiculosEtec.ViewModels
         public TipoCombustivel Combustivel { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
+        [RegularExpression("^([a-zA-Z0-9 .&'-]+)$", ErrorMessage = "O campo contém caracteres especiais")]
         [StringLength(25, MinimumLength = 3, ErrorMessage = "O campo deve conter entre {2} e {1} caracteres")]
         public string Cor { get; set; } = default!;
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
+        [RegularExpression("^([a-zA-Z0-9 .&'-]+)$", ErrorMessage = "O campo contém caracteres especiais")]
         [StringLength(17, MinimumLength = 17, ErrorMessage = "O campo deve conter {1} caracteres")]
         public string Chassi { get; set; } = default!;
 
         [DisplayName("KM")]
+        [RegularExpression("^([a-zA-Z0-9 .&'-]+)$", ErrorMessage = "O campo contém caracteres especiais")]
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public double Kilometragem { get; set; }
 
@@ -61,6 +69,7 @@ namespace CadastroDeVeiculosEtec.ViewModels
 
         public bool Particular { get; set; }
 
+        [RegularExpression("^([a-zA-Z0-9 .&'-]+)$", ErrorMessage = "O campo contém caracteres especiais")]
         public string? Observacao { get; set; }
     }
 }

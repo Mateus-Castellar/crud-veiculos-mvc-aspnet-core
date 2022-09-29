@@ -4,8 +4,7 @@
     {
         Gasolina,
         Alcool,
-        Diesel
+        Diesel,
+        Flex,
     }
-
-
 }
