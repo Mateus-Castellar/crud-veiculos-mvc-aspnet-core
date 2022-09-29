@@ -10,6 +10,10 @@ namespace CadastroDeVeiculosEtec.Data.Mappings
         {
             builder.HasKey(veiculo => veiculo.Id);
 
+            builder.Property(lbda => lbda.Codigo)
+               .IsRequired()
+               .HasColumnType("varchar(15)");
+
             builder.Property(lbda => lbda.Marca)
                 .IsRequired()
                 .HasColumnType("varchar(50)");

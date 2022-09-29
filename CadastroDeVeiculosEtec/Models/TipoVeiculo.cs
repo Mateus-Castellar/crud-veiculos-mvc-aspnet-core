@@ -8,6 +8,4 @@
         Caminhonete,
         Onibus
     }
-
-
 }

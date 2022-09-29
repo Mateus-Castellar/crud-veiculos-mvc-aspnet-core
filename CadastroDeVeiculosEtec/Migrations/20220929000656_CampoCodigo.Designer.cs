@@ -4,6 +4,7 @@ using CadastroDeVeiculosEtec.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CadastroDeVeiculosEtec.Migrations
 {
     [DbContext(typeof(AppVeiculosContext))]
-    partial class AppVeiculosContextModelSnapshot : ModelSnapshot
+    [Migration("20220929000656_CampoCodigo")]
+    partial class CampoCodigo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

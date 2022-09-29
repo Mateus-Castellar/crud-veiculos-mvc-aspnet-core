@@ -2,6 +2,7 @@
 {
     public class Veiculo : Entity
     {
+        public string Codigo { get; set; } = default!;
         public string Marca { get; set; } = default!;
         public string Modelo { get; set; } = default!;
         public string Fabricante { get; set; } = default!;

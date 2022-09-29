@@ -10,6 +10,10 @@ namespace CadastroDeVeiculosEtec.ViewModels
         public Guid Id { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
+        [StringLength(15, MinimumLength = 15, ErrorMessage = "O campo deve conter {1} caracteres")]
+        public string Codigo { get; set; } = default!;
+
+        [Required(ErrorMessage = "O campo {0} é obrigatório")]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "O campo deve conter entre {2} e {1} caracteres")]
         public string Marca { get; set; } = default!;
 
@@ -25,6 +29,7 @@ namespace CadastroDeVeiculosEtec.ViewModels
         public TipoVeiculo Tipo { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
+        [StringLength(4, MinimumLength = 4, ErrorMessage = "O campo deve conter {1} caracteres")]
         public int Ano { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
