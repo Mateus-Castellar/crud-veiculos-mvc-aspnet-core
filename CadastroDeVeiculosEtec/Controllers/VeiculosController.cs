@@ -37,6 +37,8 @@ namespace CadastroDeVeiculosEtec.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Codigo,Marca,Modelo,Fabricante,Tipo,Ano,Combustivel,Cor,Chassi,Kilometragem,Revisão,Sinistro,RouboFurto,Aluguel,Venda,Particular,Observacao")] VeiculoViewModel veiculoViewModel)
         {
+            ValidarData(veiculoViewModel.Ano);
+
             if (ModelState.IsValid is false)
                 return View(veiculoViewModel);
 
@@ -66,6 +68,8 @@ namespace CadastroDeVeiculosEtec.Controllers
         {
             if (id != veiculoViewModel.Id)
                 return NotFound();
+
+            ValidarData(veiculoViewModel.Ano);
 
             if (ModelState.IsValid is false)
                 return View(veiculoViewModel);
@@ -112,6 +116,16 @@ namespace CadastroDeVeiculosEtec.Controllers
             await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(Index));
+        }
+
+        //Metodos Complementares
+        private void ValidarData(string ano)
+        {
+            var anoInformado = Convert.ToInt32(ano);
+            var anoAtual = DateTime.Now.Year;
+
+            if (anoInformado < 1900 || anoInformado > anoAtual)
+                ModelState.AddModelError("", $"Selecione uma data válida entre 1900 e {anoAtual}");
         }
     }
 }

@@ -7,7 +7,7 @@
         public string Modelo { get; set; } = default!;
         public string Fabricante { get; set; } = default!;
         public TipoVeiculo Tipo { get; set; }
-        public int Ano { get; set; }
+        public string Ano { get; set; } = default!;
         public TipoCombustivel Combustivel { get; set; }
         public string Cor { get; set; } = default!;
         public string Chassi { get; set; } = default!;

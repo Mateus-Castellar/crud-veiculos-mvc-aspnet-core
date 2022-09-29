@@ -28,9 +28,10 @@ namespace CadastroDeVeiculosEtec.ViewModels
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public TipoVeiculo Tipo { get; set; }
 
+        [MinLength(4, ErrorMessage = "O campo {0} precisa conter {1} caracteres")]
+        [MaxLength(4, ErrorMessage = "O campo {0} precisa conter {1} caracteres")]
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
-        [Range(1900, 2025, ErrorMessage = "O campo {0} deve estar entre o intervalo de {1} e {2}")]
-        public int Ano { get; set; }
+        public string Ano { get; set; } = default!;
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public TipoCombustivel Combustivel { get; set; }
