@@ -130,7 +130,7 @@ namespace CadastroDeVeiculosEtec.Controllers
                 ModelState.AddModelError("", $"Selecione uma data válida entre 1900 e {anoAtual}");
         }
 
-        private async void ValidarCodigo(string codigo)
+        private async Task ValidarCodigo(string codigo)
         {
             var veiculoExiste = await _context.Veiculos
                 .Where(lbda => lbda.Codigo == codigo)

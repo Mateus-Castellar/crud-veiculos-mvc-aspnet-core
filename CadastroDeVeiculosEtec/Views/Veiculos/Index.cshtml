@@ -20,17 +20,20 @@
                 @Html.DisplayNameFor(model => model.Modelo)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Fabricante)
+                @Html.DisplayNameFor(model => model.Codigo)
             </th>
+           @* <th>
+                @Html.DisplayNameFor(model => model.Fabricante)
+            </th>*@
             @*<th>
                 @Html.DisplayNameFor(model => model.Tipo)
             </th>*@
-            <th>
+          @*  <th>
                 @Html.DisplayNameFor(model => model.Ano)
-            </th>
-            <th>
+            </th>*@
+            @*<th>
                 @Html.DisplayNameFor(model => model.Combustivel)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Cor)
             </th>
@@ -43,21 +46,21 @@
             <th>
                 @Html.DisplayNameFor(model => model.Revisão)
             </th>
-            <th>
+          @*  <th>
                 @Html.DisplayNameFor(model => model.Sinistro)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.RouboFurto)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Aluguel)
             </th>
-            <th>
+         @*   <th>
                 @Html.DisplayNameFor(model => model.Venda)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Particular)
-            </th>
+            </th>*@
             @*<th>
                 @Html.DisplayNameFor(model => model.Observacao)
             </th>*@
@@ -73,18 +76,21 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Modelo)
             </td>
-            <td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Codigo)
+                </td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.Fabricante)
-            </td>
+            </td>*@
            @* <td>
                 @Html.DisplayFor(modelItem => item.Tipo)
             </td>*@
-            <td>
+           @* <td>
                 @Html.DisplayFor(modelItem => item.Ano)
-            </td>
-            <td>
+            </td>*@
+           @* <td>
                 @Html.DisplayFor(modelItem => item.Combustivel)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.Cor)
             </td>
@@ -97,21 +103,21 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Revisão)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.Sinistro)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.RouboFurto)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Aluguel)
             </td>
-            <td>
+          @*  <td>
                 @Html.DisplayFor(modelItem => item.Venda)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Particular)
-            </td>
+            </td>*@
             @*<td>
                 @Html.DisplayFor(modelItem => item.Observacao)
             </td>*@

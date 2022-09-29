@@ -34,7 +34,7 @@ namespace CadastroDeVeiculosEtec.ViewModels
 
         [MinLength(4, ErrorMessage = "O campo {0} precisa conter {1} caracteres")]
         [MaxLength(4, ErrorMessage = "O campo {0} precisa conter {1} caracteres")]
-        [RegularExpression("^([a-zA-Z0-9 .&'-]+)$", ErrorMessage = "O campo contém caracteres especiais")]
+        [RegularExpression("^([0-9]+)$", ErrorMessage = "O campo contém caracteres, digite apenas números")]
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public string Ano { get; set; } = default!;
 
@@ -52,7 +52,7 @@ namespace CadastroDeVeiculosEtec.ViewModels
         public string Chassi { get; set; } = default!;
 
         [DisplayName("KM")]
-        [RegularExpression("^([a-zA-Z0-9 .&'-]+)$", ErrorMessage = "O campo contém caracteres especiais")]
+        [RegularExpression("^([0-9]+)$", ErrorMessage = "O campo contém caracteres, digite apenas números")]
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public double Kilometragem { get; set; }
 
